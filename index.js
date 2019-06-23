@@ -39,11 +39,9 @@ module.exports.init = config => {
     try {
       if (redis) return resolve(redis);
       let newConfig = Object.assign(defaultConfig, config);
-      redis = new Redis({
-        host: newConfig.server,
-        port: newConfig.port,
-        password: newConfig.password
-      });
+      redis = new Redis(
+        `redis://:${newConfig.password}@${newConfig.host}:${newConfig.port}/4`
+      );
       redis.on("ready", () => {
         redis.config("SET", "notify-keyspace-events", "Ex");
         redis.on("message", messageListener);
