@@ -1,7 +1,8 @@
 # ioredis-notifier
 
-
-const notifer = require("./redis-notifier");
+#Example
+```javascript
+const notifer = require("redis-notifier");
 notifer.init().then(() => {
   console.log("done");
 
@@ -10,3 +11,4 @@ notifer.init().then(() => {
     console.log(key, event);
   });
 });
+```
