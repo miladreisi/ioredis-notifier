@@ -1,0 +1,15 @@
+{
+  "name": "ioredis-notifier",
+  "version": "1.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Milad Raeisi",
+  "license": "ISC",
+  "homepage": "https://github.com/miladreisi/ioredis-notifier",
+  "dependencies": {
+    "ioredis": "^4.10.0"
+  }
+}
