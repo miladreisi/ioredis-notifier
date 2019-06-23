@@ -4,7 +4,7 @@
 ```javascript
 const notifer = require("redis-notifier");
 notifer.init({
-    host: 'localhost,
+    host: 'localhost',
     port: 6379,
     password: 'some-password'
   }).then(() => {
