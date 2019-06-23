@@ -1,5 +1,5 @@
 const Redis = require("ioredis");
-const defaultConfig = {
+let defaultConfig = {
   host: "localhost",
   port: 6379,
   password: ""
@@ -38,11 +38,11 @@ module.exports.init = config => {
   return new Promise((resolve, reject) => {
     try {
       if (redis) return resolve(redis);
-      Object.assign(defaultConfig, config);
+      let newConfig = Object.assign(defaultConfig, config);
       redis = new Redis({
-        host: defaultConfig.server,
-        port: defaultConfig.port,
-        password: defaultConfig.password
+        host: newConfig.server,
+        port: newConfig.port,
+        password: newConfig.password
       });
       redis.on("ready", () => {
         redis.config("SET", "notify-keyspace-events", "Ex");
