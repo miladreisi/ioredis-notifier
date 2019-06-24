@@ -2,7 +2,7 @@
 
 #Example
 ```javascript
-const notifer = require("redis-notifier");
+const notifer = require("ioredis-notifier");
 notifer.init({
     host: 'localhost',
     port: 6379,
@@ -10,7 +10,7 @@ notifer.init({
   }).then(() => {
   console.log("done");
 
-  notifer.addEventListener("voucherInfo::.*", notifer.events.expired, (key, event) => {
+  notifer.addEventListener("myRegixSearchingForAKey.*", notifer.events.expired, (key, event) => {
     console.log("expired");
     console.log(key, event);
   });
