@@ -10,8 +10,8 @@ exports.events = {
 
 const keyEventsMap = new Map();
 function messageListener(event, key) {
-  console.log("messageListener");
-  console.log(event, key);
+  // console.log("messageListener");
+  // console.log(event, key);
   for (let [itemKey, itemValue] of keyEventsMap) {
     let regex = new RegExp(itemKey);
     let matched = regex.test(key);
