@@ -10,7 +10,7 @@ notifer.init({
   }).then(() => {
   console.log("done");
 
-  notifer.addEventListener("myRegixSearchingForAKey.*", notifer.events.expired, (key, event) => {
+  notifer.addEventListener("myRegexSearchingForAKey.*", notifer.events.expired, (key, event) => {
     console.log("expired");
     console.log(key, event);
   });
